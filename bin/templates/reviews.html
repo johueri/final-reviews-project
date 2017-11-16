@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Star Trek Reviews</title>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1>Star Trek Movie Reviews</h1>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="/categories">Categories</a></li>
+				<li><a href="/reviews">Reviews</a></li>
+			</ul>
+		</nav>
+		<div class="thymleaf-rcontainer">
+			<div th:each="review: ${reviews}">
+				
+					<div class="reviews-title">
+							<a th:href="@{/review(id=${review.reviewId})}" th:text="${review.title}"></a>
+					</div>
+			</div>
+		</div>
+
+		<footer>
+			<p>2017</p>
+		</footer>
+	</div>
+</body>
+</html>

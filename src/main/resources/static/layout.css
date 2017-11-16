@@ -1,0 +1,40 @@
+body {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+47,ededed+100;White+3D+%231 */
+background: #ffffff; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+body {
+	background-color: black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Bree serif', serif;
+	color: white;
+	box-shadow: 5px 5px 5px white;
+	text-align: center;
+}
+
+
+img {
+	height: 50vh;
+}
+
+a {
+	color: white;
+}
+
+a:visited {
+	color: hotpink;
+}
+
+a:hover {
+	color: red;
+}
+
+p {
+	color: gray;
+}
