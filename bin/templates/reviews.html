@@ -19,16 +19,15 @@
 		</nav>
 		<div class="thymleaf-rcontainer">
 			<div th:each="review: ${reviews}">
-				
+
 					<div class="reviews-title">
 							<a th:href="@{/review(id=${review.reviewId})}" th:text="${review.title}"></a>
 					</div>
 			</div>
 		</div>
 
-		<footer>
-			<p>2017</p>
-		</footer>
+		<footer>Copyright 2017</footer>
 	</div>
+	<script src="/app.js"></script>
 </body>
 </html>

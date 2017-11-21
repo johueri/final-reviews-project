@@ -23,7 +23,7 @@ public class Review { // Model Class
 
 	@ManyToOne
 	private Category category;
-	
+
 	@ManyToMany
 	private Set<Tag> tagsInReview = new HashSet<Tag>();
 
@@ -62,11 +62,10 @@ public class Review { // Model Class
 		return tagsInReview;
 	}
 
-
 	public void setTagsInReview(Set<Tag> tagsInReview) {
 		this.tagsInReview = tagsInReview;
 	}
-	
+
 	public void addTag(Tag newTag) {
 		tagsInReview.add(newTag);
 	}
@@ -77,8 +76,8 @@ public class Review { // Model Class
 
 	@Override
 	public String toString() {
-		return String.format("Review[title='%s', imageUrl='%s', category='%s', content='%s', tagsInReview='%s']", title, imageUrl,
-				category, content, tagsInReview);
+		return String.format("Review[title='%s', imageUrl='%s', category='%s', content='%s', tagsInReview='%s']", title,
+				imageUrl, category, content, tagsInReview);
 	}
 
 }

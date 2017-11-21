@@ -3,27 +3,32 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<title>Tags</title>
+	<title>Tags</title>
 </head>
 
 <body>
-	<header>
-		<h1>Tgs</h1>
-	</header>
-	<nav>
+	<div class="container">
+		<header>
+			<h1>Tgs</h1>
+		</header>
+
+		<nav>
 			<ul>
 				<li><a href="/categories">Categories</a></li>
 				<li><a href="/reviews">Reviews</a></li>
-
 			</ul>
 		</nav>
+
 		<h1 th:text="${tag.tagName}"> </h1>
-	<ul>
-	<li th:each="review: ${tag.tagsInReview}">
-	<p th:href="@{/review(id=${review.reviewId})}" th:text="${review.title}"></p>
-	</li>
-	</ul>
-	
-d
+		<ul>
+			<li th:each="review: ${tag.tagsInReview}">
+				<p th:href="@{/review(id=${review.reviewId})}" th:text="${review.title}"></p>
+			</li>
+		</ul>
+
+		<footer>Copyright 2017</footer>
+		<script src="/app.js"></script>
+	</div>
 </body>
+
 </html>

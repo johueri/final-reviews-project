@@ -37,10 +37,10 @@ public class Category {
 	public Set<Review> getReviewInCategory() {
 		return reviewInCategory;
 	}
-	
-		@Override
-		public String toString() {
-			return String.format("Category[categoryId='%d', categoryTitle='%s']", categoryId, categoryTitle);
-		
+
+	@Override
+	public String toString() {
+		return String.format("Category[categoryId='%d', categoryTitle='%s']", categoryId, categoryTitle);
+
 	}
 }

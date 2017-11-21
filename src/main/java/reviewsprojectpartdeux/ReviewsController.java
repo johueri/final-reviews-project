@@ -17,16 +17,15 @@ public class ReviewsController {
 
 	@Resource
 	CategoryRepository categoryRepo;
-	
+
 	@Resource
 	TagRepository tagRepo;
 
-	
 	@RequestMapping("/")
 	public String redirectToReviews(Model model) {
 		return "redirect:/reviews";
 	}
-	
+
 	@RequestMapping("/reviews")
 	public String getAllReviews(Model model) {
 		model.addAttribute("reviews", reviewRepo.findAll());
@@ -50,14 +49,16 @@ public class ReviewsController {
 		model.addAttribute("category", categoryRepo.findOne(id));
 		return "category";
 	}
+
 	@RequestMapping("/tags")
 	public String getAllTags(Model model) {
 		model.addAttribute("tags", tagRepo.findAll());
 		return "tags";
 	}
+
 	@RequestMapping("/tag")
 	public String getOneTag(@RequestParam Long id, Model model) {
-		model.addAttribute("tag",tagRepo.findOne(id));
+		model.addAttribute("tag", tagRepo.findOne(id));
 		return "category";
 	}
 
