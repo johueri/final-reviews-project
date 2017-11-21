@@ -68,7 +68,7 @@ public class Review { // Model Class
 
 	@Override
 	public String toString() {
-		return String.format("Review[title='%s', imageUrl='%s', category='%s', content='%s', reviewTags='%s']", title, imageUrl,
+		return String.format("Review[title='%s', imageUrl='%s', category='%s', content='%s', tagsInReview='%s']", title, imageUrl,
 				category, content, tagsInReview);
 	}
 

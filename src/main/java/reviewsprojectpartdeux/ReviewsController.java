@@ -49,7 +49,7 @@ public class ReviewsController {
 	}
 	@RequestMapping("/tag")
 	public String getOneTag(@RequestParam Long id, Model model) {
-		model.addAttribute("category",tagRepo.findOne(id));
+		model.addAttribute("tag",tagRepo.findOne(id));
 		return "category";
 	}
 
