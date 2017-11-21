@@ -19,6 +19,12 @@ public class ReviewsController {
 	@Resource
 	TagRepository tagRepo;
 
+	
+	@RequestMapping("/")
+	public String redirectToReviews(Model model) {
+		return "redirect:/reviews";
+	}
+	
 	@RequestMapping("/reviews")
 	public String getAllReviews(Model model) {
 		model.addAttribute("reviews", reviewRepo.findAll());
