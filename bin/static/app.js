@@ -13,7 +13,7 @@ footerText.addEventListener('click', function() {
 var removeTagButton = document.getElementById('removeTagButton');
 
   removeTagButton.onclick = function() {
-    if(!confirm("Are you sure you want to remove this tag?")){
+    if(!confirm("You sure?")){
       removeTagButton.setAttribute('th:formaction', '@{/remove-tag-cancelled(id=${review.id})}');
     }
   };
@@ -23,5 +23,5 @@ var removeTagButton = document.getElementById('removeTagButton');
   		this.style.fontSize = '50px';
   			});
   	homePage.addEventListener('mouseout',function(){
-  	this.style.fontSize = '20px';
+  	this.style.fontSize = '100%';
   	});
