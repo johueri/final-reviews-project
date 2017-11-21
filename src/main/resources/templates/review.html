@@ -17,8 +17,10 @@
 			<ul>
 				<li><a href="/categories">Categories</a></li>
 				<li><a href="/reviews">Reviews</a></li>
+
 			</ul>
 		</nav>
+		
 			<div class="review-title">
 				<h2 th:text="${review.title}"></h2>
 			</div>
@@ -31,6 +33,12 @@
 			<div class="review-content">
 				<p th:text="${review.content}"></p>
 			</div>
+			<div class="review-tags">
+				
+			<ul>
+				<li th:each = "tag: ${review.tagsInReview}"><a
+						th:href="@{/tag(id=${tag.tagId})}" th:text="${tag.tagName}"></a></li>
+			</ul>
 			
 		<div class="back-home">
 			<a href="http://localhost:8080/reviews">Back to home</a>
@@ -39,5 +47,6 @@
 		
 	</div>	
 	<footer>2017</footer>
+
 </body>
 </html>

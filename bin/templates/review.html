@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<div class="container">	
+	<div class="container">
 		<header>
 			<h1> Star Trek Movie Review </h1>
 		</header>
@@ -17,6 +17,7 @@
 			<ul>
 				<li><a href="/categories">Categories</a></li>
 				<li><a href="/reviews">Reviews</a></li>
+
 			</ul>
 		</nav>
 			<div class="review-title">
@@ -31,13 +32,20 @@
 			<div class="review-content">
 				<p th:text="${review.content}"></p>
 			</div>
-			
+			<div class="review-tags">
+
+			<ul>
+				<li th:each = "tag: ${review.tagsInReview}"><a
+						th:href="@{/tag(id=${tag.tagId})}" th:text="${tag.tagName}"></a></li>
+			</ul>
+
 		<div class="back-home">
 			<a href="http://localhost:8080/reviews">Back to home</a>
 		</div>
 
-		
-	</div>	
+
+	</div>
 	<footer>2017</footer>
+	</div>
 </body>
 </html>

@@ -75,7 +75,7 @@ a {
 
 p {
 	color: white;
-	padding: 2rem;
+	padding-left: 2rem;
 }
 
 
@@ -95,4 +95,7 @@ p {
 	padding-right: 3rem;
 	flex-flow:row wrap;
   justify-content: space-around;
+}
+.back-home {
+
 }
