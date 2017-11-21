@@ -62,8 +62,17 @@ public class Review { // Model Class
 		return tagsInReview;
 	}
 
+
 	public void setTagsInReview(Set<Tag> tagsInReview) {
 		this.tagsInReview = tagsInReview;
+	}
+	
+	public void addTag(Tag newTag) {
+		tagsInReview.add(newTag);
+	}
+
+	public void removeTag(Tag newTag) {
+		tagsInReview.remove(newTag);
 	}
 
 	@Override

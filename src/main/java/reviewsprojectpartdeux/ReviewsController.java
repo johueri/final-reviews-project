@@ -1,5 +1,7 @@
 package reviewsprojectpartdeux;
 
+import java.util.Set;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
@@ -59,4 +61,33 @@ public class ReviewsController {
 		return "category";
 	}
 
+	@RequestMapping("/add-tag")
+	public String addTag(@RequestParam Long id, String tagName) {
+		Tag newTag = tagRepo.getByTagName(tagName);
+		if (newTag == null) {
+			newTag = new Tag(tagName);
+			tagRepo.save(newTag);
+		}
+		Review taggedReview = reviewRepo.findOne(id);
+		Set<Tag> currentTags = taggedReview.getTagsInReview();
+		if (!currentTags.contains(newTag)) {
+			taggedReview.addTag(newTag);
+			reviewRepo.save(taggedReview);
+		}
+		return "redirect:/review?id=" + id;
+	}
+
+	@RequestMapping("/remove-tag")
+	public String removeTag(@RequestParam Long id, String tagName) {
+		Tag tagBeingRemoved = tagRepo.getByTagName(tagName);
+		if (tagBeingRemoved != null) {
+			Review review = reviewRepo.findOne(id);
+			Set<Tag> tagsOnReview = review.getTagsInReview();
+			if (tagsOnReview.contains(tagBeingRemoved)) {
+				review.removeTag(tagBeingRemoved);
+				reviewRepo.save(review);
+			}
+		}
+		return "redirect:/review?id=" + id;
+	}
 }
