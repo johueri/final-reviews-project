@@ -4,11 +4,11 @@
 
 <head>
 	<title>Star Trek Review</title>
-	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body>
-	
+
 	<header>
 		<h1 th:text="${category.categoryTitle}"></h1>
 	</header>
@@ -18,15 +18,17 @@
 			<li><a href="/reviews">Reviews</a></li>
 		</ul>
 	</nav>
-	
+
 	<div class="categoryStuff">
-		<div th:each= "review: ${category.reviewInCategory}">
+		<div th:each="review: ${category.reviewInCategory}">
 			<div class="reviews-titiles-catpage">
 				<a th:href="@{/review(id=${review.reviewId})}" th:text="${review.title}"></a>
 			</div>
-			
+
 		</div>
-	</div>  
-	
+		<footer>Copyright 2017</footer>
+	</div>
+<script src="/app.js"></script>
 </body>
+
 </html>

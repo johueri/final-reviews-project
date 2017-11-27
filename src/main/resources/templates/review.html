@@ -5,11 +5,11 @@
 
 <head>
 	<title>Star Trek Review</title>
-		<link rel="stylesheet" type="text/css" href="style.css"/>
+	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body>
-	<div class="container">	
+	<div class="container">
 		<header>
 			<h1> Star Trek Movie Review </h1>
 		</header>
@@ -20,33 +20,49 @@
 
 			</ul>
 		</nav>
-		
-			<div class="review-title">
-				<h2 th:text="${review.title}"></h2>
-			</div>
-			<div class="review-category">
-				<h3 th:text="${review.category.categoryTitle}"></h3>
-			</div>
-			<div class="review-image">
-				<img th:src="${review.imageUrl}"/>
-			</div>
-			<div class="review-content">
-				<p th:text="${review.content}"></p>
-			</div>
-			<div class="review-tags">
-				
+		<div class="review-title">
+			<h2 th:text="${review.title}"></h2>
+		</div>
+		<div class="review-category">
+			<h3 th:text="${review.category.categoryTitle}"></h3>
+		</div>
+		<div class="review-image">
+			<img th:src="${review.imageUrl}" />
+		</div>
+		<div class="review-content">
+			<p th:text="${review.content}"></p>
+		</div>
+
+		<div class="review-tags">
 			<ul>
-				<li th:each = "tag: ${review.tagsInReview}"><a
-						th:href="@{/tag(id=${tag.tagId})}" th:text="${tag.tagName}"></a></li>
+				<li th:each="tag: ${review.tagsInReview}"><a th:href="@{/tag(id=${tag.tagId})}" th:text="${tag.tagName}"></a></li>
 			</ul>
-			
+		</div>
+
+		<div class="new-tag-section">
+			<form class="create-tags" method="POST">
+				<label>Add tag: </label>
+				<input type="text" name="tagName" />
+				<button th:formaction="@{/add-tag(id= ${review.reviewId})}">add</button>
+			</form>
+		</div>
+
+		<div class="remove-tag-section">
+			<form class="remove-tag" method="POST">
+				<label>Remove tag: </label>
+				<input type="text" name="tagName" />
+				<button id="removeTagButton" th:formaction="@{/remove-tag(id= ${review.reviewId})}">remove</button>
+			</form>
+		</div>
+
 		<div class="back-home">
 			<a href="http://localhost:8080/reviews">Back to home</a>
 		</div>
 
-		
-	</div>	
-	<footer>2017</footer>
 
+		<footer>Copyright 2017</footer>
+	</div>
+	<script src="/app.js"></script>
 </body>
+
 </html>
